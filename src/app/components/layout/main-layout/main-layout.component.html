@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="wrapper">
+    <section id="first" #section class="section">
+        <div class="fog"></div>
+        <div class="text-content">
+            <p class="header">
+                Dating App for cool people
+            </p>
+            <p class="content">
+                Feel lonly tonight? Tired of swiping left on boring profiles? Join us my friend...
+            </p>
+        </div>
+        <div class="sad-guy">
+            <img width="100%" src="../../../../assets/sad.gif"/>
+        </div>
+    </section>
+    <section id="second" #section class="section">
+        <div class="text-content">
+            <p class="header">
+                Meet your destiny dude
+            </p>
+            <p class="content">
+                We have the largest collection of the freaks of your city! Don't worry, we won't tell your mom you met your soulmate while swiping on the toilet
+            </p>
+        </div>
+        <div class="thumb-wrapper">
+            <img class="thumb" src="../../../../assets/chel.png"/>
+        </div>
+    </section>
+    <section id="third" #section class="section">
+        <div class="text-content">
+            <p>text</p>
+        </div>
+    </section>
+    <div class="points">
+        <span class="point cursor-pointer" (click)="selectElem(0)" [ngClass]="{'active': currentSection === 0}"></span>
+        <span class="point cursor-pointer" (click)="selectElem(1)" [ngClass]="{'active': currentSection === 1}"></span>
+        <span class="point cursor-pointer" (click)="selectElem(2)" [ngClass]="{'active': currentSection === 2}"></span>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

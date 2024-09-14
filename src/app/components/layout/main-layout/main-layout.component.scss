@@ -1,0 +1,169 @@
+.wrapper {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    
+    .section {
+        $this: &;
+        position: relative;
+        gap: 1rem;
+        height: 100vh;
+        padding: 100px 20vh;
+
+        .text-content {
+            position: relative;
+            z-index: 1;
+
+            .header {
+                font-size: 4rem;
+                margin-bottom: 4rem;
+            }
+
+            .content {
+                font-size: 1.5rem;
+            }
+        }
+
+        &#first {
+            position: relative;
+            background-image: url(../../../../assets/town1gif.gif);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            .text-content {
+                padding-top: 8rem;
+                opacity: 0;
+            }
+
+            &.active {
+                .text-content {
+                    animation: fadeIn .6s ease-in-out 1 forwards;
+                }
+
+                .sad-guy {
+                    display: block;
+                    animation: sad-guy 1.5s ease-in-out 1 forwards;
+                }
+            }
+
+            .fog {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: .3;
+                background-image: url(../../../../assets/fog.jpg);
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .sad-guy {
+                display: none;
+                position: absolute;
+                top: 50%;
+                right: 5%;
+                width: 30%;
+            }
+        }
+
+        &#second {
+            position: relative;
+            background-image: url(../../../../assets/waves3.svg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            .text-content {
+                padding-top: 2rem;
+                width: 60%;
+                opacity: 0;
+            }
+
+            &.active {
+                .text-content {
+                    animation: fadeIn .6s ease-in-out 1 forwards;
+                }
+
+                .thumb-wrapper {
+                    display: block;
+                    animation: haha 1.5s ease-in-out 1 forwards;
+                }
+            }
+
+            .thumb-wrapper {
+                position: absolute;
+                display: none;
+                top: 20%;
+                right: -20%;
+            }
+        }
+    }
+
+    .points {
+        position: fixed;
+        top: 0;
+        right: .5rem;
+        width: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 1rem;
+
+        .point {
+            display: block;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            opacity: .5;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// animations
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-20vh, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes haha {
+    from {
+        top: 20%;
+        right: -20%;
+        transform: rotateX(90deg) rotateY(360deg);
+    }
+    to {
+        top: 40%;
+        right: 5%;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
+
+@keyframes sad-guy {
+    from {
+        top: 100%;
+        right: 5%;
+    }
+    to {
+        top: 50%;
+        right: 5%;
+    }
+}
+
